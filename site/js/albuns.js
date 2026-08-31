@@ -7,6 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cartoes = Array.from(grade.querySelectorAll(".album"));
 
+  cartoes.forEach((cartao) => {
+    const player = cartao.querySelector("iframe");
+    const videoId = player?.src.split("/embed/")[1]?.split("?")[0];
+
+    if (videoId) {
+      const link = document.createElement("a");
+      link.className = "video-link";
+      link.href = `https://www.youtube.com/watch?v=${videoId}`;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Abrir música no YouTube ↗";
+      cartao.appendChild(link);
+    }
+  });
+
   function normalizar(texto) {
     return texto
       .toLowerCase()

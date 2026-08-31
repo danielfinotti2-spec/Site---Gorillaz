@@ -4,42 +4,58 @@
     box-sizing: border-box;
 }
 
+:root {
+    --fundo: #fafafa;
+    --papel: rgba(255, 255, 255, 0.9);
+    --texto: #292c27;
+    --texto-suave: #70756d;
+    --linha: rgba(32, 34, 31, 0.12);
+    --destaque: #808080;
+    --destaque-escuro: #5f5f5f;
+    --sombra: 0 14px 40px rgba(27, 31, 24, 0.09);
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f2f2f2;
-    color: #1f1f1f;
-    line-height: 1.6;
-    padding: 30px 16px;
+    min-height: 100vh;
+    font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.7;
+    padding: 30px 16px 50px;
 }
 
 main {
-    width: min(1000px, 100%);
+    width: min(960px, 100%);
     margin: 0 auto;
 }
 
 /* CABEÇALHO */
 header {
-    background: #ffffff;
-    border: 1px solid #d8d8d8;
-    border-radius: 14px;
-    padding: 24px 28px;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-    margin-bottom: 22px;
+    background: var(--papel);
+    border: 1px solid var(--linha);
+    border-top: 5px solid var(--destaque);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: var(--sombra);
+    margin-bottom: 28px;
     text-align: center;
 }
 
 header .tag {
-    color: #666;
-    font-size: 14px;
+    color: var(--destaque-escuro);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     margin-bottom: 3px;
 }
 
 header h1 {
-    font-size: 32px;
+    font: 600 clamp(32px, 6vw, 48px)/1.15 "Trebuchet MS", "Segoe UI", sans-serif;
     margin-bottom: 6px;
 }
 
@@ -54,21 +70,23 @@ header .voltar {
     font-size: 13px;
     color: #333;
     text-decoration: none;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 6px 12px;
+    border: 0;
+    border-radius: 0;
+    padding: 8px 12px;
     transition: 0.2s;
 }
 
 header .voltar:hover {
-    background: #f0f0f0;
+    color: #ffffff;
+    background: var(--destaque-escuro);
 }
 
 /* FORMULÁRIO DE FILTROS */
 #filtros {
-    background: #ffffff;
-    border: 1px solid #d8d8d8;
-    border-radius: 14px;
+    background: var(--papel);
+    border: 1px solid var(--linha);
+    border-left: 5px solid var(--destaque);
+    border-radius: 18px;
     padding: 20px 24px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     margin-bottom: 14px;
@@ -146,8 +164,9 @@ header .voltar:hover {
     flex-direction: column;
     gap: 6px;
     background: #ffffff;
-    border: 3px solid #333333;
-    border-radius: 14px;
+    border: 1px solid var(--linha);
+    border-left: 5px solid var(--destaque);
+    border-radius: 16px;
     padding: 20px;
     color: #1f1f1f;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
@@ -162,12 +181,17 @@ header .voltar:hover {
 .album span {
     font-size: 13px;
     color: #777;
-    font-weight: 700;
+    font-weight: 500;
+    letter-spacing: 0.04em;
 }
 
 .album h2 {
-    font-size: 19px;
-    line-height: 1.3;
+    color: #353535;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
 }
 
 .album small {
@@ -198,8 +222,8 @@ header .voltar:hover {
     margin-top: 10px;
     overflow: hidden;
     background: #000000;
-    border: 4px solid #1f1f1f;
-    border-radius: 10px;
+    border: 3px solid #4a4a4a;
+    border-radius: 8px;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
 }
 
@@ -209,6 +233,21 @@ header .voltar:hover {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+.video-link {
+    align-self: flex-start;
+    margin-top: 6px;
+    color: #555555;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.video-link:hover,
+.video-link:focus-visible {
+    color: #111111;
 }
 
 .album.oculto {

@@ -5,11 +5,11 @@
 }
 
 :root {
-    --fundo: #eef0ec;
+    --fundo: #0f0f0f;
     --papel: rgba(255, 255, 255, 0.9);
-    --texto: #292c27;
-    --texto-suave: #70756d;
-    --linha: rgba(32, 34, 31, 0.12);
+    --texto: #333333;
+    --texto-suave: #0d0e0d;
+    --linha: rgba(0, 0, 0, 0.12);
     --destaque: #808080;
     --destaque-escuro: #858585;
     --sombra: 0 14px 40px rgba(27, 31, 24, 0.09);
@@ -24,7 +24,7 @@ body {
     padding: 30px 16px 50px;
     color: var(--texto);
     background:
-        radial-gradient(circle at top left, rgba(127, 155, 58, 0.16), transparent 32rem),
+        radial-gradient(circle at top left, rgba(80, 80, 80, 0.10), transparent 32rem),
         var(--fundo);
     font-family: "Segoe UI", "Trebuchet MS", sans-serif;
     font-weight: 400;
@@ -99,13 +99,13 @@ body {
     min-width: 112px;
     padding: 10px 17px;
     color: var(--texto);
-    background: #f6f7f3;
-    border: 1px solid var(--linha);
-    border-radius: 999px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.04);
+    box-shadow: none;
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -114,15 +114,22 @@ body {
     color: #ffffff;
     background: var(--destaque-escuro);
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(83, 107, 32, 0.23);
+    box-shadow: 0 8px 18px rgba(40, 40, 40, 0.18);
     outline: none;
 }
 
 .menu-principal .album-link {
     gap: 8px;
     color: #ffffff;
-    background: var(--destaque);
+    background: transparent;
     border-color: transparent;
+    color: var(--texto);
+}
+
+.menu-principal .album-link:hover,
+.menu-principal .album-link:focus-visible {
+    color: #ffffff;
+    background: var(--destaque-escuro);
 }
 
 .album-link span {
@@ -174,11 +181,24 @@ main {
     scroll-margin-top: 24px;
 }
 
+.imagem-destaque {
+    display: block;
+    width: 100%;
+    max-height: 390px;
+    margin-bottom: 24px;
+    object-fit: cover;
+    object-position: center;
+    border: 4px solid #4a4a4a;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
 /* INTEGRANTES */
 .integrantes-grade {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
+    align-items: stretch;
 }
 
 .integrante-card {
@@ -186,6 +206,7 @@ main {
     grid-template-columns: 112px 1fr;
     gap: 16px;
     align-items: center;
+    height: 100%;
     min-width: 0;
     padding: 12px;
     background: #f7f8f5;
@@ -196,16 +217,18 @@ main {
 
 .integrante-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(127, 155, 58, 0.55);
+    border-color: rgba(80, 80, 80, 0.45);
     box-shadow: 0 12px 24px rgba(27, 31, 24, 0.1);
 }
 
 .integrante-card img {
+    display: block;
     width: 112px;
+    height: 112px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: top center;
-    border: 3px solid #ffffff;
+    border: none;
     border-radius: 13px;
     box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
 }
@@ -234,7 +257,7 @@ main {
     margin-top: 18px;
     padding: 16px 18px;
     color: var(--texto-suave);
-    background: rgba(127, 155, 58, 0.08);
+    background: rgba(80, 80, 80, 0.08);
     border-radius: 12px;
 }
 
@@ -248,11 +271,24 @@ main {
     font-size: 13px;
 }
 
-/* Mantém os títulos das fases separados no texto longo. */
+/* Mantém os blocos e títulos das fases separados no texto longo. */
 .historia-secao {
-    white-space: pre-line;
+    white-space: pre-wrap;
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 2;
+    text-align: left;
+}
+
+.fase-titulo {
+    margin: 30px 0 10px;
+    padding: 10px 14px;
+    color: #ffffff;
+    background: #4a4a4a;
+    border-left: 5px solid #1f1f1f;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    font-size: 18px;
+    line-height: 1.35;
+    white-space: normal;
 }
 
 @media (max-width: 720px) {
@@ -291,6 +327,7 @@ main {
 
     .integrante-card img {
         width: 82px;
+        height: 82px;
     }
 }
 
@@ -304,4 +341,7 @@ main {
     *::after {
         transition-duration: 0.01ms !important;
     }
+}
+#Origem{
+    text-align: center;
 }
