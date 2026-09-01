@@ -1,10 +1,13 @@
-# Site — Gorillaz
+# Gorillaz — Biografia e Discografia
 
-Site responsivo em português sobre a história, os integrantes e a discografia do Gorillaz.
+Site responsivo em português sobre a história, os integrantes e a discografia da banda virtual Gorillaz.
 
-## Site publicado
+## Acesse o site
 
-**[Acessar o site](https://danielfinotti2-spec.github.io/Site---Gorillaz/)**
+- **[Página inicial](https://danielfinotti2-spec.github.io/Site---Gorillaz/)**
+- **[Discografia e músicas](https://danielfinotti2-spec.github.io/Site---Gorillaz/Albuns.html)**
+
+O projeto está publicado gratuitamente pelo GitHub Pages e recebe as atualizações enviadas para a branch `main`.
 
 ## Recursos
 
@@ -14,6 +17,7 @@ Site responsivo em português sobre a história, os integrantes e a discografia 
 - Página de álbuns com busca e ordenação.
 - Uma música em vídeo para cada álbum.
 - Layout adaptado para computadores e celulares.
+- Navegação interna entre a biografia e a discografia.
 
 ## Tecnologias
 
@@ -39,7 +43,11 @@ Site responsivo em português sobre a história, os integrantes e a discografia 
 
 ## Executar localmente
 
-Abra o arquivo `index.html` no navegador. Para uma visualização mais próxima da versão publicada, também é possível iniciar um servidor local na pasta do projeto.
+1. Baixe ou clone este repositório.
+2. Abra a pasta do projeto.
+3. Abra o arquivo `index.html` no navegador.
+
+Não é necessário instalar dependências.
 
 ## Licença
 
